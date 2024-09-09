@@ -24,3 +24,8 @@ this flag is set, the pipeline will look for previously computed checksums in
 ## Output
 
 The pipeline will write the results at `MD5/checksums.md5` in the input runfolder.
+
+## Running the tests
+```
+nf-test test
+```

@@ -19,6 +19,6 @@ workflow {
     CREATE_SIS_STYLE_CHECKSUMS(
         params.input_folder,
         params.include_file,
-        params.ignore_cache
+        params.ignore_cache,
     )
 }

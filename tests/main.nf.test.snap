@@ -1,0 +1,30 @@
+{
+    "Generate checksums from scratch": {
+        "content": [
+            {
+                "0": [
+                    "checksums.md5:md5,75a433b1e14782f06d44c93142a2d3fb"
+                ]
+            }
+        ],
+        "meta": {
+            "nf-test": "0.9.0",
+            "nextflow": "24.04.4"
+        },
+        "timestamp": "2024-09-09T13:40:49.058439"
+    },
+    "Generate checksums with cache": {
+        "content": [
+            {
+                "0": [
+                    "checksums.md5:md5,d6a4e7c087ac3895562df860e16a9c10"
+                ]
+            }
+        ],
+        "meta": {
+            "nf-test": "0.9.0",
+            "nextflow": "24.04.4"
+        },
+        "timestamp": "2024-09-09T13:40:53.342759"
+    }
+}

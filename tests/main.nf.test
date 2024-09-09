@@ -1,0 +1,43 @@
+nextflow_process {
+    name "Test Process CREATE_SIS_STYLE_CHECKSUMS"
+    script "main.nf"
+    process "CREATE_SIS_STYLE_CHECKSUMS"
+
+    test("Generate checksums from scratch") {
+        when {
+            params {
+                input_folder = "${projectDir}/tests/test_resources/runfolder_nocache"
+            }
+            process {
+                """
+                input[0] = "${projectDir}/tests/test_resources/runfolder_nocache"
+                input[1] = "${projectDir}/tests/test_resources/include.rsync"
+                input[2] = true
+                """
+            }
+        }
+        then {
+            assert process.success
+            assert snapshot(process.out).match()
+        }
+    }
+
+    test("Generate checksums with cache") {
+        when {
+            params {
+                input_folder = "${projectDir}/tests/test_resources/runfolder_cache"
+            }
+            process {
+                """
+                input[0] = "${projectDir}/tests/test_resources/runfolder_cache"
+                input[1] = "${projectDir}/tests/test_resources/include.rsync"
+                input[2] = false
+                """
+            }
+        }
+        then {
+            assert process.success
+            assert snapshot(process.out).match()
+        }
+    }
+}

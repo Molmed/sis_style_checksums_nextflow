@@ -11,7 +11,7 @@ export OUTPATH="$FOLDER/MD5/$OUTPUT_FILE"
 export TMPPATH="${OUTPUT_FILE}.tmp"
 
 mkdir -p "$(dirname "${OUTPATH}")"
-if [ "$(echo "$IGNORE_CACHE" |tr '[:upper:]' '[:lower:]')" = true ]
+if [ "$(echo "$IGNORE_CACHE" |tr '[:upper:]' '[:lower:]')" = false ]
 then
   cp $OUTPATH $OUTPUT_FILE
 fi

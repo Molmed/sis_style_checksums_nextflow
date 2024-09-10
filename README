@@ -18,8 +18,9 @@ checksums need to be generated
 - `--include_file <path_to_include_file`: determines which files should appear
 in the checksums (same format as `rsync`)
 - `--ignore-cache` whether or not to use previously computed checksums. When
-this flag is set, the pipeline will look for previously computed checksums in
-`MD5/checksums.md5` in the input runfolder.
+this flag is set, the pipeline will ignore previously computed checksum.
+Otherwise, it will keep the checksums available in `MD5/checksums.md5` in the
+input runfolder.
 
 ## Output
 

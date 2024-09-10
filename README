@@ -1,0 +1,32 @@
+# Sisyphus-style checksums
+
+This pipeline takes a runfolder and an include file and generates a checksum
+file compatible with [Sisyphus](https://github.com/Molmed/sisyphus).
+
+## Usage
+
+```nextflow
+nextflow run main.nf --input_folder <path_to_runfolder> --include_file <path_to_include_file> [--ignore_cache]
+```
+
+### Running on Uppmax
+When running on Uppmax, use `-profile uppmax` and specify project with `--project <uppmax project>`
+
+## Input
+- `--input_folder <path_to_runfolder`: path to the runfolder for which the
+checksums need to be generated
+- `--include_file <path_to_include_file`: determines which files should appear
+in the checksums (same format as `rsync`)
+- `--ignore-cache` whether or not to use previously computed checksums. When
+this flag is set, the pipeline will ignore previously computed checksum.
+Otherwise, it will keep the checksums available in `MD5/checksums.md5` in the
+input runfolder.
+
+## Output
+
+The pipeline will write the results at `MD5/checksums.md5` in the input runfolder.
+
+## Running the tests
+```
+nf-test test
+```
